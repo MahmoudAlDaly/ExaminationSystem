@@ -8,10 +8,11 @@ namespace Exam02
 {
 	internal class FinalExam : Exam
 	{
-        public FinalExam(int qn,Subject sub) : base(qn,sub)
+        public FinalExam(int questionCount, Subject subject, TimeOnly time) : base(questionCount,subject,time)
         {
-			NumberOfQuestion = qn;
-			subject = sub;
+			NumberOfQuestion = questionCount;
+			Subject = subject;
+			Time = time;
 
 		}
 
@@ -22,14 +23,14 @@ namespace Exam02
         public override void MCQ()
 		{
 			Question question = new MCQ();
-			question.Questions(NumberOfQuestion);
+			question.Questions();
 		}
 
 		public void TFQuestion()
 		{
 
-			Question question = new TrueOrFalseQuestion(NumberOfQuestion);
-			question.Questions(NumberOfQuestion);
+			Question question = new TrueOrFalseQuestion();
+			question.Questions();
 		}
 	}
 }

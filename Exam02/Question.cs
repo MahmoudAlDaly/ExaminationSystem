@@ -11,20 +11,22 @@ namespace Exam02
         public string? Header { get; set; }
         public string? Body { get; set; }
         public int Mark { get; set; }
-        //public Answer[]? AnswerList { get; set; }
+        public Answer[]? AnswerList { get; set; }
 
-  //      protected Question(int lenght)
-  //      {
-
-		//}
+        
 
         protected Question()
         {
             
         }
 
-       
-        public abstract void Questions(int qn);
+        protected Question( Answer[] answers)
+        {
+            AnswerList = answers;
+        }
+
+
+        public abstract void Questions(/*int questionCount*/);
 
 		public object Clone()
 		{

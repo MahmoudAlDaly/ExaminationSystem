@@ -8,8 +8,10 @@ namespace Exam02
 {
 	internal abstract class Exam
 	{
+        public TimeOnly Time { get; set; }
         public int NumberOfQuestion { get; set; }
-        public Subject subject { get; set; }
+        public Subject Subject { get; set; }
+
         public abstract void MCQ();
 
 
@@ -18,10 +20,11 @@ namespace Exam02
             
         }
 
-        protected Exam(int noq,Subject sub)
+        protected Exam(int questionCount, Subject subject,TimeOnly time)
         {
-            subject = sub;
-            NumberOfQuestion = noq;
+            Subject = subject;
+            NumberOfQuestion = questionCount;
+            Time = time;
         }
     }
 }

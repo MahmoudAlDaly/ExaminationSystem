@@ -9,37 +9,40 @@ namespace Exam02
 {
 	internal class TrueOrFalseQuestion  : Question 
 	{
-
-        
-        public Answer[]? AnswerList { get; set; }
-
-        public TrueOrFalseQuestion()
+        public bool Answer { get; set; }
+		
+		public TrueOrFalseQuestion()
 		{
 
 		}
 
-        public TrueOrFalseQuestion(int a)
+        
+        public TrueOrFalseQuestion(Answer[] answers,int size) : base(answers) 
         {
-            AnswerList = new Answer[a];
+			Header = "True Or False";
+            AnswerList = new Answer[size];
         }
 
 
-        public override void Questions(int a)
+        public override void Questions()
 		{
-			
 			for (int i = 0; i < AnswerList?.Length; i++)
 			{
-				Console.WriteLine($"enter header question {1}");
-				Header = Console.ReadLine();
+				Console.WriteLine($"{Header}");
 
-				Console.WriteLine($"enter body question {1}");
+				Console.WriteLine($"enter body question {i+1}");
 				Body = Console.ReadLine();
 
-				Console.WriteLine($"enter mark question {1}");
+				Console.WriteLine($"enter question answer {i + 1}");
+				Answer = bool.Parse(Console.ReadLine());
+
+				Console.WriteLine($"enter mark question {i + 1}");
 				Mark = int.Parse(Console.ReadLine());
 
+				
+
 				AnswerList[i].ID = i;
-				AnswerList[i].Name = Console.ReadLine();
+				AnswerList[i].Name = Answer.ToString();
 			}
 
 			Console.WriteLine("True False");

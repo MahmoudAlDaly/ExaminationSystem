@@ -10,10 +10,11 @@ namespace Exam02
 	{
 
 
-        public PracticalExam(int qn, Subject sub) : base(qn, sub) 
+        public PracticalExam(int questionCount, Subject subject,TimeOnly time) : base(questionCount, subject,time) 
         {
-            NumberOfQuestion = qn;
-			subject = sub;
+            NumberOfQuestion = questionCount;
+			Subject = subject;
+            Time = time;
         }
 
         public PracticalExam()
@@ -22,8 +23,8 @@ namespace Exam02
         }
         public override void MCQ()
 		{
-			Question trueOrFalseQuestion = new TrueOrFalseQuestion(NumberOfQuestion);
-			trueOrFalseQuestion.Questions(NumberOfQuestion);
+			Question mcq = new MCQ();
+			mcq.Questions();
 		}
 
 

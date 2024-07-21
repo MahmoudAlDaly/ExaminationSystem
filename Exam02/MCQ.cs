@@ -8,32 +8,38 @@ namespace Exam02
 {
 	internal class MCQ : Question
 	{
+        public MCQ()
+        {
+            
+        }
 
-		public Answer[]? AnswerList { get; set; }
-
-		//public MCQ(string header,string body,int mark, Answer[] ans):base(header,body,mark,ans)
-		//{
-
-		//}
-
-
-
-		public override void Questions(int qn)
+        public MCQ(Answer[] answers, int size) : base(answers)
 		{
-			AnswerList = new Answer[qn];
-			int m;
+			Header = "choose one answer";
+			AnswerList = new Answer[size];
+		}
+
+
+
+		public override void Questions()
+		{
 
 			for (int i = 0; i < AnswerList?.Length; i++)
 			{
-				Console.WriteLine($"enter header question {i + 1}");
-				Header = Console.ReadLine();
-
-				Console.WriteLine($"enter question answer {i + 1}");
+				
+				Console.WriteLine($"enter question  {i + 1}");
 				Body = Console.ReadLine();
 
 				Console.WriteLine($"enter mark question {i + 1}");
+				int m;
 				int.TryParse(Console.ReadLine(), out m);
 				Mark = m;
+
+				for (int j = 0; j < 2; j++)
+				{
+					Console.WriteLine($"enter answers {j + 1}");
+
+				}
 
 				if (AnswerList != null)
 				{

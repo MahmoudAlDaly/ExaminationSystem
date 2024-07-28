@@ -10,20 +10,22 @@ namespace Exam02
 	{
 
 
-        public PracticalExam(int qn, Subject sub) : base(qn, sub) 
-        {
-            NumberOfQuestion = qn;
-			subject = sub;
-        }
-
-        public PracticalExam()
+        public PracticalExam() 
         {
             
+            
         }
+
+        
         public override void MCQ()
 		{
-			Question trueOrFalseQuestion = new TrueOrFalseQuestion(NumberOfQuestion);
-			trueOrFalseQuestion.Questions(NumberOfQuestion);
+            Console.WriteLine("how many question ?");
+            int q;
+			int.TryParse(Console.ReadLine(), out q);
+			NumberOfQuestion = q;
+			Question mcq = new MCQ(NumberOfQuestion);
+			mcq.Questions();
+
 		}
 
 

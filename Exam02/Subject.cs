@@ -20,7 +20,7 @@ namespace Exam02
 
         public void CreateExam()
         {
-            Console.WriteLine("choose exam 1 final / 2 practical");
+            Console.WriteLine("choose exam ==>   1 final / 2 practical");
             int exam;
             int.TryParse(Console.ReadLine(),out exam);
 
@@ -28,6 +28,8 @@ namespace Exam02
             {
 				Exam final = new FinalExam();
                 final.MCQ();
+                FinalExam finalExam = new FinalExam();
+                finalExam.TFQuestion();
 			}
             else
             {

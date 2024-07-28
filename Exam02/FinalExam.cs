@@ -8,12 +8,7 @@ namespace Exam02
 {
 	internal class FinalExam : Exam
 	{
-        public FinalExam(int qn,Subject sub) : base(qn,sub)
-        {
-			NumberOfQuestion = qn;
-			subject = sub;
-
-		}
+        
 
         public FinalExam()
         {
@@ -22,14 +17,14 @@ namespace Exam02
         public override void MCQ()
 		{
 			Question question = new MCQ();
-			question.Questions(NumberOfQuestion);
+			question.Questions();
 		}
 
 		public void TFQuestion()
 		{
 
-			Question question = new TrueOrFalseQuestion(NumberOfQuestion);
-			question.Questions(NumberOfQuestion);
+			Question question = new TrueOrFalseQuestion();
+			question.Questions();
 		}
 	}
 }

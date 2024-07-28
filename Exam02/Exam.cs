@@ -10,7 +10,7 @@ namespace Exam02
 	{
         public TimeOnly Time { get; set; }
         public int NumberOfQuestion { get; set; }
-        public Subject Subject { get; set; }
+        public Subject? Subject { get; set; }
 
         public abstract void MCQ();
 
@@ -20,11 +20,6 @@ namespace Exam02
             
         }
 
-        protected Exam(int questionCount, Subject subject,TimeOnly time)
-        {
-            Subject = subject;
-            NumberOfQuestion = questionCount;
-            Time = time;
-        }
+        
     }
 }

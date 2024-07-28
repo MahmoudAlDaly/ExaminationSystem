@@ -10,21 +10,22 @@ namespace Exam02
 	{
 
 
-        public PracticalExam(int questionCount, Subject subject,TimeOnly time) : base(questionCount, subject,time) 
-        {
-            NumberOfQuestion = questionCount;
-			Subject = subject;
-            Time = time;
-        }
-
-        public PracticalExam()
+        public PracticalExam() 
         {
             
+            
         }
+
+        
         public override void MCQ()
 		{
-			Question mcq = new MCQ();
+            Console.WriteLine("how many question ?");
+            int q;
+			int.TryParse(Console.ReadLine(), out q);
+			NumberOfQuestion = q;
+			Question mcq = new MCQ(NumberOfQuestion);
 			mcq.Questions();
+
 		}
 
 

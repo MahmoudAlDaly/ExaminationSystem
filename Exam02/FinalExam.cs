@@ -8,13 +8,7 @@ namespace Exam02
 {
 	internal class FinalExam : Exam
 	{
-        public FinalExam(int questionCount, Subject subject, TimeOnly time) : base(questionCount,subject,time)
-        {
-			NumberOfQuestion = questionCount;
-			Subject = subject;
-			Time = time;
-
-		}
+        
 
         public FinalExam()
         {

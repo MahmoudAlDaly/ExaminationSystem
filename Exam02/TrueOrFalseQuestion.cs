@@ -17,7 +17,7 @@ namespace Exam02
 		}
 
         
-        public TrueOrFalseQuestion(Answer[] answers,int size) : base(answers) 
+        public TrueOrFalseQuestion(int size) 
         {
 			Header = "True Or False";
             AnswerList = new Answer[size];
